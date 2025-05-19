@@ -6,6 +6,25 @@ Este projeto simula um sistema de irrigação inteligente para agricultura de pr
 
 ---
 
+## Instruções de como rodar o Projeto Máquina Agrícola
+
+- Clone o projeto para pasta local: 
+  
+  - *Opção 1*: Rodar o protótipo do Esp32 diretamente no VSCode: após abrir o projeto é necessário possuir extensão PlatformIO. Antes de fazer o build é necessário possuir uma licença do site wokwi [licença](https://wokwi.com/license). Em seguida realizar o buid do projeto. Após isso é necessário dar play para que seja gerado logs. Copie esses logs e os insira no arquivo [modelagem.txt](Database/modelagem.txt). Este arquivo é usado na entidade db_service para inserir os dados na tabela Lavoura.
+  
+  - *Opção 2*: Rodar o protótipo no site Wokwi: Ao abri o site [Wokwi](https://wokwi.com/) e clicar em ESP32 e abrir o primeiro starter template é necessário copiar o código no arquivo [logicaEsp32.ino](src/logicaEsp32.ino)
+  e colocar na aba sketch.ino após isso é necessário copiar o código do arquivo [diagram](/diagram.json) e colocar na aba diagram e apertar play para que gere os logs no Monitor Serial. 
+  ![alt text](Assets/sketchino.png). Copie esses logs e os insira no arquivo [modelagem.txt](Database/modelagem.txt). Este arquivo é usado na entidade db_service para inserir os dados na tabela Lavoura.
+
+-  
+
+
+
+
+
+
+
+
 ## 1. Montagem do Circuito no Wokwi
 
 O circuito foi montado na plataforma [Wokwi](https://wokwi.com/), utilizando os seguintes componentes:

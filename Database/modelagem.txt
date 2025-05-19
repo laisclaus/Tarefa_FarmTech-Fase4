@@ -1,9 +1,4 @@
-LDR: 7.49, Umidade: 37.00, Temperatura: 23.00
-LDR: 8.90, Umidade: 44.00, Temperatura: 26.00
-LDR: 8.56, Umidade: 40.00, Temperatura: 26.00
-LDR: 6.79, Umidade: 33.00, Temperatura: 27.00
-LDR: 5.21, Umidade: 34.00, Temperatura: 21.00
-LDR: 5.28, Umidade: 54.00, Temperatura: 30.00
-LDR: 6.93, Umidade: 35.00, Temperatura: 28.00
-LDR: 8.65, Umidade: 32.00, Temperatura: 20.00
-LDR: 8.84, Umidade: 42.00, Temperatura: 29.00
+LDR: 7.49, Umidade: 59.00, Temperatura: 23.00
+LDR: 8.83, Umidade: 33.00, Temperatura: 28.00
+LDR: 8.67, Umidade: 58.00, Temperatura: 29.00
+LDR: 6.97, Umidade: 30.00, Temperatura: 29.00

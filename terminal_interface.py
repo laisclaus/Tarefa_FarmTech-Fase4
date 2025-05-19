@@ -1,4 +1,4 @@
-import sqlite3
+from Database.db_actions import conectar, inserir_dado, consultar_dados, atualizar_umidade, remover_dado
 
 MENU_OPTIONS = {
     "1": "Ver todos os dados",
@@ -28,55 +28,46 @@ def input_int(prompt):
             print("Valor inválido. Digite um número inteiro.")
 
 def ver_dados(cursor):
-    cursor.execute('SELECT * FROM Dados_Lavoura')
-    dados = cursor.fetchall()
+    dados = consultar_dados(cursor)
     print("\nID | LDR (pH) | Umidade | Temperatura")
     print("--------------------------------------")
     for row in dados:
         print(f"{row[0]:2} | {row[1]:7} | {row[2]:7.2f} | {row[3]:11.2f}")
 
-def inserir_dado(cursor, conn):
+def inserir_dado_menu(cursor, conn):
     while True:
         try:
-            ldr = input_int("Digite o valor do LDR (pH): ")
+            ldr = input_float("Digite o valor do LDR (pH): ")
             umidade = input_float("Digite o valor da umidade: ")
             temperatura = input_float("Digite o valor da temperatura: ")
-            cursor.execute(
-                'INSERT INTO Dados_Lavoura (ldr, umidade, temperatura) VALUES (?, ?, ?)',
-                (ldr, umidade, temperatura)
-            )
-            conn.commit()
+            inserir_dado(cursor, conn, ldr, umidade, temperatura)
             print("Dado inserido com sucesso!")
             break
         except Exception as e:
             print(f"Erro ao inserir dados: {e}")
             print("Por favor, insira os dados novamente.\n")
 
-def atualizar_umidade(cursor, conn):
+def atualizar_umidade_menu(cursor, conn):
     while True:
         try:
             id = input_int("Digite o ID do registro a atualizar: ")
             nova_umidade = input_float("Digite o novo valor de umidade: ")
-            cursor.execute('UPDATE Dados_Lavoura SET umidade = ? WHERE id = ?', (nova_umidade, id))
-            if cursor.rowcount == 0:
+            if atualizar_umidade(cursor, conn, id, nova_umidade) == 0:
                 print("ID não encontrado. Tente novamente.\n")
                 continue
-            conn.commit()
             print("Umidade atualizada com sucesso!")
             break
         except Exception as e:
             print(f"Erro ao atualizar umidade: {e}")
             print("Por favor, insira os dados novamente.\n")
 
-def remover_dado(cursor, conn):
+def remover_dado_menu(cursor, conn):
     while True:
         try:
             id = input_int("Digite o ID do registro a remover: ")
-            cursor.execute('DELETE FROM Dados_Lavoura WHERE id = ?', (id,))
-            if cursor.rowcount == 0:
+            if remover_dado(cursor, conn, id) == 0:
                 print("ID não encontrado. Tente novamente.\n")
                 continue
-            conn.commit()
             print("Dado removido com sucesso!")
             break
         except Exception as e:
@@ -84,13 +75,12 @@ def remover_dado(cursor, conn):
             print("Por favor, tente novamente.\n")
 
 def main():
-    conn = sqlite3.connect('Database/agro.db')
-    cursor = conn.cursor()
+    conn, cursor = conectar()
     actions = {
         "1": lambda: ver_dados(cursor),
-        "2": lambda: inserir_dado(cursor, conn),
-        "3": lambda: atualizar_umidade(cursor, conn),
-        "4": lambda: remover_dado(cursor, conn)
+        "2": lambda: inserir_dado_menu(cursor, conn),
+        "3": lambda: atualizar_umidade_menu(cursor, conn),
+        "4": lambda: remover_dado_menu(cursor, conn)
     }
     while True:
         menu()

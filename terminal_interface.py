@@ -1,10 +1,12 @@
 from Database.db_actions import conectar, inserir_dado, consultar_dados, atualizar_umidade, remover_dado
+from Database.limpa_tabela import limpar_tabela
 
 MENU_OPTIONS = {
     "1": "Ver todos os dados",
     "2": "Inserir novo dado",
     "3": "Atualizar umidade",
     "4": "Remover dado",
+    "5": "Limpar tabela",
     "0": "Sair"
 }
 
@@ -73,6 +75,19 @@ def remover_dado_menu(cursor, conn):
         except Exception as e:
             print(f"Erro ao remover dado: {e}")
             print("Por favor, tente novamente.\n")
+
+def limpar_tabela_menu(cursor, conn):
+    while True:
+        confirmacao = input("Tem certeza que deseja limpar a tabela? (s/n): ").lower()
+        if confirmacao == 's':
+            limpar_tabela(cursor, conn)
+            print("Tabela limpa com sucesso!")
+            break
+        elif confirmacao == 'n':
+            print("Operação cancelada.")
+            break
+        else:
+            print("Opção inválida. Tente novamente.")
 
 def main():
     conn, cursor = conectar()

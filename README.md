@@ -1,4 +1,4 @@
-# Sistema de Irrigação Inteligente - FarmTech Solutions
+# Desafio Máquina Agrícola
 
 ## Descrição Geral
 
@@ -61,7 +61,8 @@ O circuito foi montado na plataforma [Wokwi](https://wokwi.com/), utilizando os 
 
 ## 3. Código do ESP32
 
-Se encontra na pasta [src](src/) no arquivo [logicaEsp32](src/logicaEsp32.ino).
+O código-fonte do ESP32 está disponível na pasta [src](src/) no arquivo [logicaEsp32.ino](src/logicaEsp32.ino).  
+O código está comentado, explicando a lógica de leitura dos sensores, acionamento do relé e envio dos dados para o monitor serial.
 
 ---
 
@@ -70,15 +71,29 @@ Se encontra na pasta [src](src/) no arquivo [logicaEsp32](src/logicaEsp32.ino).
 Os dados lidos do monitor serial são copiados e armazenados em um banco de dados SQLite (`agro.db`) usando um script Python.  
 O script realiza as operações CRUD (Create, Read, Update, Delete) na tabela `Dados_Lavoura`.
 
-### Exemplo de Estrutura da Tabela
+### Estrutura da Tabela
 
 | id | ldr (pH) | umidade | temperatura |
 |----|----------|---------|-------------|
-| 1  |   594    |  45.00  |   29.00     |
-| 2  |   620    |  43.00  |   21.00     |
-|... |   ...    |  ...    |   ...       |
+| 1  |   7.49   |  59.00  |   23.00     |
+| 2  |   8.83   |  33.00  |   28.00     |
+| 3  |   8.67   |  58.00  |   29.00     |
+| 4  |   6.97   |  30.00  |   29.00     |
 
-### Principais Operações CRUD
+- **id:** Identificador único do registro.
+- **ldr (pH):** Valor analógico do LDR, simulando o pH do solo.
+- **umidade:** Valor de umidade do solo lido pelo DHT22.
+- **temperatura:** Temperatura do solo lida pelo DHT22.
+
+### Justificativa da Estrutura
+
+A estrutura do banco foi baseada no MER da fase anterior, garantindo que cada leitura de sensores seja registrada com seus respectivos valores, permitindo análises históricas e estatísticas. Cada campo representa um sensor do circuito, conforme modelagem da Fase 2.
+
+---
+
+## 5. Operações CRUD
+
+O sistema Python implementa as seguintes operações:
 
 - **Inserção:**  
   Adiciona novos dados lidos dos sensores.
@@ -87,32 +102,15 @@ O script realiza as operações CRUD (Create, Read, Update, Delete) na tabela `D
   Permite visualizar todos os dados armazenados.
 
 - **Atualização:**  
-  Permite alterar valores de um registro específico.
+  Permite alterar valores de umidade de um registro específico.
 
 - **Remoção:**  
   Permite excluir registros do banco.
 
-### Justificativa da Estrutura
+- **Limpar tabela:**  
+  Remove todos os registros da tabela (opção disponível no menu).
 
-A estrutura do banco foi baseada no MER da fase anterior, garantindo que cada leitura de sensores seja registrada com seus respectivos valores, permitindo análises históricas e estatísticas.
-
----
-
-## 5. Como Executar
-
-1. **Monte o circuito no Wokwi e rode o código no ESP32.**
-2. **Copie os dados do monitor serial para o arquivo `modelagem.txt`.**
-3. **Execute o script Python para inserir os dados no banco:**
-   ```sh
-   python db_services.py
-   ```
-4. **Utilize as funções CRUD do script para manipular os dados conforme necessário.**
-
----
-
-## 6. Créditos
-
-Projeto desenvolvido por João Domingues para a disciplina de Práticas de Código - Faculdade.
+Todas as operações possuem tratamento de erros e mensagens claras para o usuário.
 
 ---
 
@@ -131,3 +129,5 @@ Projeto desenvolvido por João Domingues para a disciplina de Práticas de Códi
 - A tabela do banco de dados estará em branco, caso queria limpá-la novamente a opção 5 da interface estará disponível.
 
 - É possível consultar os dados inseridos na tabela, editar e remover os mesmos.
+
+- Use o comando 'python terminal_interface.py' para utilizar a interface do projeto no terminal.

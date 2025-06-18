@@ -59,7 +59,6 @@ void loop() {
 
 // =================================================================
 // ==           FARMTECH SOLUTIONS - CÓDIGO FASE 4              ==
-// ==        Refatorado por seu Engenheiro de Dados Principal   ==
 // =================================================================
 
 // --- Inclusão de Bibliotecas ---

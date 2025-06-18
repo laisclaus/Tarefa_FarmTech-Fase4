@@ -8,7 +8,7 @@
 
 ## 👨‍🎓 Integrantes: 
 - João José Domingues Silva
-- Lais Londo Claus
+- Lais Kondo Claus
 - Murilo Santana
 - Lucas Alves Ladeira
 

@@ -10,7 +10,7 @@
 - João José Domingues Silva
 - Lais Kondo Claus
 - Murilo Santana
-- Lucas Alves Ladeira
+- Willian Augusto Ferreira
 
 ## 👩‍🏫 Professores:
 ### Tutor(a) 
@@ -28,6 +28,7 @@
 
 - **ProjetoMaquinaAgricola/**: Pasta principal do projeto, contendo todo o código-fonte, scripts Python, arquivos do ESP32, banco de dados e documentação.
   - **src/**: Código-fonte do ESP32 (lógica de sensores e controle).
+  - Link WokWi: https://wokwi.com/projects/434117279482199041
   - **Database/**: Scripts Python para manipulação do banco de dados SQLite, arquivo de dados e banco gerado.
   - **Assets/**: Imagens e diagramas do circuito.
   - **terminal_interface.py**: Interface de menu interativo para o usuário manipular os dados.
@@ -37,7 +38,7 @@
 
 ## 📖 Tutorial e detalhes do projeto
 
-O tutorial completo de uso, detalhes do circuito, lógica de funcionamento, exemplos de dados, justificativa do modelo de dados e instruções de execução estão disponíveis no arquivo [README.md](/Documents/README.md) dentro da pasta `Documents`.
+**O tutorial completo de uso, detalhes do circuito, lógica de funcionamento, exemplos de dados, justificativa do modelo de dados e instruções de execução estão disponíveis no arquivo [README.md](/Documents/README.md) dentro da pasta `Documents`.**
 
 ---
 

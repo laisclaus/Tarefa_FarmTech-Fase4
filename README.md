@@ -4,7 +4,7 @@
 <a href="https://www.fiap.com.br/"><img src="Assets/logo-fiap.png" alt="FIAP - Faculdade de Informática e Administração Paulista" border="0" width=40% height=40%></a>
 </p>
 
-# Construindo uma Máquina Agrícola: Gestão de agronegócio
+# Automação e inteligência na FarmTech Solutions
 
 ## 👨‍🎓 Integrantes: 
 - João José Domingues Silva
@@ -20,7 +20,9 @@
 
 ## 📜 Descrição
 
-*Este projeto simula um sistema de irrigação inteligente para agricultura de precisão, integrando sensores físicos (simulados) a um microcontrolador ESP32. O objetivo é coletar dados de sensores de umidade, nutrientes e pH, controlar uma bomba de irrigação (relé/LED) e armazenar os dados em um banco de dados SQL para análise posterior. O projeto também implementa operações CRUD e permite a visualização e manipulação dos dados via interface de terminal.*
+*Este projeto representa a quarta fase da iniciativa FarmTech Solutions, elevando um sistema de monitoramento IoT a um ecossistema de dados completo e inteligente para agricultura de precisão. O objetivo principal é automatizar e otimizar a irrigação agrícola através do monitoramento em tempo real, persistência de dados e, mais importante, análise preditiva com Machine Learning.
+
+A solução integra um microcontrolador ESP32, simulado no ambiente Wokwi, a uma plataforma de dados robusta construída em Python. O sistema não apenas reage às condições atuais do solo, mas também aprende com os dados históricos para prever as necessidades futuras de irrigação, fornecendo insights acionáveis através de um dashboard interativo.*
 
 ---
 

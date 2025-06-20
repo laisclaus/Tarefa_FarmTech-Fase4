@@ -1,4 +1,5 @@
-!pip install paho-mqtt
+#!pip install paho-mqtt
+import pandas as pd
 import sqlite3
 from datetime import datetime
 import os
@@ -76,7 +77,7 @@ def consultar_dados():
     try:
         conn = sqlite3.connect(DB_PATH)
         cursor = conn.cursor()
-        cursor.execute('SELECT * FROM Dados_Lavoura ORDER BY timestamp DESC')
+        cursor.execute('SELECT * FROM Dados_Lavoura ORDER BY id DESC')
         return cursor.fetchall()
     except sqlite3.Error as e:
         print(f"Erro ao consultar dados: {e}")
@@ -84,6 +85,23 @@ def consultar_dados():
     finally:
         if conn:
             conn.close()
+
+
+
+def get_dados_df():
+    """Retorna os dados da lavoura como DataFrame ordenado."""
+    try:
+        conn = sqlite3.connect(DB_PATH)
+        df = pd.read_sql_query("SELECT * FROM Dados_Lavoura ORDER BY id DESC", conn)
+        return df
+    except sqlite3.Error as e:
+        print(f"Erro ao ler dados como DataFrame: {e}")
+        return pd.DataFrame()
+    finally:
+        if conn:
+            conn.close()
+
+
             
 def atualizar_previsao(id, previsao):
     """

@@ -42,6 +42,9 @@ A solução integra um microcontrolador ESP32, simulado no ambiente Wokwi, a uma
 
 **O tutorial completo de uso, detalhes do circuito, lógica de funcionamento, exemplos de dados, justificativa do modelo de dados e instruções de execução estão disponíveis no arquivo [README.md](/Documents/README.md) dentro da pasta `Documents`.**
 
+## 🎥 Link do Youtube para acesso ao vídeo com demonstração do código
+
+
 ---
 
 ## 🗃 Histórico de lançamentos

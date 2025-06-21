@@ -28,7 +28,7 @@ A solução integra um microcontrolador ESP32, simulado no ambiente Wokwi, a uma
 
 ## 📁 Estrutura de pastas
 
-- **ProjetoMaquinaAgricola/**: Pasta principal do projeto, contendo todo o código-fonte, scripts Python, arquivos do ESP32, banco de dados e documentação.
+- **Tarefa_FarmTech-Fase4/**: Pasta principal do projeto, contendo todo o código-fonte, scripts Python, arquivos do ESP32, banco de dados e documentação.
   - **src/**: Código-fonte do ESP32 (lógica de sensores e controle).
   - Link WokWi: https://wokwi.com/projects/434117279482199041
   - **Database/**: Scripts Python para manipulação do banco de dados SQLite, arquivo de dados e banco gerado.

@@ -47,6 +47,8 @@ A solução integra um microcontrolador ESP32, simulado no ambiente Wokwi, a uma
 ## 🗃 Histórico de lançamentos
 
 * 1.0.0 - 21/04/2025
+* 2.0.0 - 20/05/2025
+* 3.0.0 - 20/06/2025
 
 ## 📋 Licença
 

@@ -44,6 +44,7 @@ A solução integra um microcontrolador ESP32, simulado no ambiente Wokwi, a uma
 
 ## 🎥 Link do Youtube para acesso ao vídeo com demonstração do código
 
+[FASE_04-CTWP-Cap11](https://youtu.be/z2GTv5emO1U)
 
 ---
 
